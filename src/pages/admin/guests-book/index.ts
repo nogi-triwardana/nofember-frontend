@@ -1,0 +1,1 @@
+export { default as GuestsBook } from './page.component';
