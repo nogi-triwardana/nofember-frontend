@@ -20,6 +20,12 @@ import { Route as LayoutImport } from './routes/_layout'
 const LoginLazyImport = createFileRoute('/login')()
 const AboutLazyImport = createFileRoute('/about')()
 const IndexLazyImport = createFileRoute('/')()
+const LayoutTransferLazyImport = createFileRoute('/_layout/transfer')()
+const LayoutSettingLazyImport = createFileRoute('/_layout/setting')()
+const LayoutReservationLazyImport = createFileRoute('/_layout/reservation')()
+const LayoutInvitationLazyImport = createFileRoute('/_layout/invitation')()
+const LayoutGuestsBookLazyImport = createFileRoute('/_layout/guests-book')()
+const LayoutGuestsLazyImport = createFileRoute('/_layout/guests')()
 const LayoutDashboardLazyImport = createFileRoute('/_layout/dashboard')()
 
 // Create/Update Routes
@@ -43,6 +49,48 @@ const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const LayoutTransferLazyRoute = LayoutTransferLazyImport.update({
+  path: '/transfer',
+  getParentRoute: () => LayoutRoute,
+} as any).lazy(() =>
+  import('./routes/_layout/transfer.lazy').then((d) => d.Route),
+)
+
+const LayoutSettingLazyRoute = LayoutSettingLazyImport.update({
+  path: '/setting',
+  getParentRoute: () => LayoutRoute,
+} as any).lazy(() =>
+  import('./routes/_layout/setting.lazy').then((d) => d.Route),
+)
+
+const LayoutReservationLazyRoute = LayoutReservationLazyImport.update({
+  path: '/reservation',
+  getParentRoute: () => LayoutRoute,
+} as any).lazy(() =>
+  import('./routes/_layout/reservation.lazy').then((d) => d.Route),
+)
+
+const LayoutInvitationLazyRoute = LayoutInvitationLazyImport.update({
+  path: '/invitation',
+  getParentRoute: () => LayoutRoute,
+} as any).lazy(() =>
+  import('./routes/_layout/invitation.lazy').then((d) => d.Route),
+)
+
+const LayoutGuestsBookLazyRoute = LayoutGuestsBookLazyImport.update({
+  path: '/guests-book',
+  getParentRoute: () => LayoutRoute,
+} as any).lazy(() =>
+  import('./routes/_layout/guests-book.lazy').then((d) => d.Route),
+)
+
+const LayoutGuestsLazyRoute = LayoutGuestsLazyImport.update({
+  path: '/guests',
+  getParentRoute: () => LayoutRoute,
+} as any).lazy(() =>
+  import('./routes/_layout/guests.lazy').then((d) => d.Route),
+)
 
 const LayoutDashboardLazyRoute = LayoutDashboardLazyImport.update({
   path: '/dashboard',
@@ -75,6 +123,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutDashboardLazyImport
       parentRoute: typeof LayoutImport
     }
+    '/_layout/guests': {
+      preLoaderRoute: typeof LayoutGuestsLazyImport
+      parentRoute: typeof LayoutImport
+    }
+    '/_layout/guests-book': {
+      preLoaderRoute: typeof LayoutGuestsBookLazyImport
+      parentRoute: typeof LayoutImport
+    }
+    '/_layout/invitation': {
+      preLoaderRoute: typeof LayoutInvitationLazyImport
+      parentRoute: typeof LayoutImport
+    }
+    '/_layout/reservation': {
+      preLoaderRoute: typeof LayoutReservationLazyImport
+      parentRoute: typeof LayoutImport
+    }
+    '/_layout/setting': {
+      preLoaderRoute: typeof LayoutSettingLazyImport
+      parentRoute: typeof LayoutImport
+    }
+    '/_layout/transfer': {
+      preLoaderRoute: typeof LayoutTransferLazyImport
+      parentRoute: typeof LayoutImport
+    }
   }
 }
 
@@ -82,7 +154,15 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexLazyRoute,
-  LayoutRoute.addChildren([LayoutDashboardLazyRoute]),
+  LayoutRoute.addChildren([
+    LayoutDashboardLazyRoute,
+    LayoutGuestsLazyRoute,
+    LayoutGuestsBookLazyRoute,
+    LayoutInvitationLazyRoute,
+    LayoutReservationLazyRoute,
+    LayoutSettingLazyRoute,
+    LayoutTransferLazyRoute,
+  ]),
   AboutLazyRoute,
   LoginLazyRoute,
 ])

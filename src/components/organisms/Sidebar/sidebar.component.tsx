@@ -3,6 +3,7 @@ import { Menus } from "../../../constants";
 import { Container, NestedMenu, UlStyled, buttonCollapse } from "./sidebar.styles";
 import { FaArrowLeft } from "react-icons/fa";
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
+import { Link } from "@tanstack/react-router";
 
 const sidebarVariants = {
   expanded: {
@@ -59,12 +60,13 @@ const Sidebar = () => {
         <UlStyled 
           sx={{ marginTop: 72 }}
         >
-          {Menus.map(({ name, Icon }, key) => {
+          {Menus.map(({ name, Icon, link }, key) => {
             return (
               <MenuItem
                 key={key}
                 name={name}
                 Icon={Icon}
+                link={link}
                 isOpen={isOpen}
               />
             )
@@ -75,35 +77,37 @@ const Sidebar = () => {
   );
 };
 
-const MenuItem = ({ key, name, Icon, isOpen }: any) => {
+const MenuItem = ({ key, name, Icon, link, isOpen }: any) => {
   return (
     <motion.li 
       key={'sidebar-menu-' + key}
     >
-      <NestedMenu>
-        <Icon 
-          sx={{ color: 'primary' }} 
-        />
-        {isOpen && (
-          <motion.span 
-            key={'span'}
-            sx={{ 
-              color: 'primary', 
-              fontWeight: 'bold', 
-              fontSize: 16,
-            }}
-            variants={menuVariants}
-            animate={"expanded"}
-            initial={"expanded"}
-            transition={{
-              duration: 1
-            }}
-            exit={"collapsed"}
-          >
-            {name}
-          </motion.span>
-        )}
-      </NestedMenu>
+      <Link to={link} style={{ textDecoration: 'none' }}>
+        <NestedMenu>
+          <Icon 
+            sx={{ color: 'primary' }} 
+          />
+          {isOpen && (
+            <motion.span 
+              key={'span'}
+              sx={{ 
+                color: 'primary', 
+                fontWeight: 'bold', 
+                fontSize: 16,
+              }}
+              variants={menuVariants}
+              animate={"expanded"}
+              initial={"expanded"}
+              transition={{
+                duration: 1
+              }}
+              exit={"collapsed"}
+            >
+              {name}
+            </motion.span>
+          )}
+        </NestedMenu>
+      </Link>
     </motion.li>
   );
 }

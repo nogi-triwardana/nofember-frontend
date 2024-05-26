@@ -12,30 +12,37 @@ import { GrConfigure } from "react-icons/gr";
 export const Menus = [
   {
     "name": "Dashboard",
-    "Icon": MdDashboard
+    "Icon": MdDashboard,
+    "link": "/dashboard"
   },
   {
     "name": "Tamu Undangan",
-    "Icon": MdPeople
+    "Icon": MdPeople,
+    "link": "/guests"
   },
   {
     "name": "Kiriman Undangan",
-    "Icon": SlEnvolopeLetter
+    "Icon": SlEnvolopeLetter,
+    "link": "/invitation"
   },
   {
     "name": "Bukti Transfer",
-    "Icon": BiTransferAlt
+    "Icon": BiTransferAlt,
+    "link": "/transfer"
   },
   {
     "name": "Buku Tamu",
-    "Icon": FaBook
+    "Icon": FaBook,
+    "link": "/guests-book"
   },
   {
     "name": "Reservasi Tamu",
-    "Icon": FaClipboardList
+    "Icon": FaClipboardList,
+    "link": "/reservation"
   },
   {
     "name": "Pengaturan",
-    "Icon": GrConfigure
+    "Icon": GrConfigure,
+    "link": "/setting"
   }
 ]
