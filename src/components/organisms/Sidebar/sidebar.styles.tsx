@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { theme } from '../../themes';
 import { ThemeUIStyleObject } from 'theme-ui';
 
 export const Container = styled(motion.aside)`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: ${theme.colors?.bgLight};
+  background-color: var(--bg-light);
   position: relative;
   z-index: 9999;
   box-shadow: 2px 2px 2px #aaaaaa;

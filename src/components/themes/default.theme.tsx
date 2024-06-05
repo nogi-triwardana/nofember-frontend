@@ -22,10 +22,11 @@ export const theme: Theme = {
   },
   colors: {
     bgLight: '#fcfafa',
-    text: '#1c1b1b',
+    text: '#333333',
     background: '#fff',
     primary: '#334155',
     secondary: '#30c',
+    borderColorTable: '#eaecf0',
     // muted: '#f6f6f6',
   },
   fontWeights: {
