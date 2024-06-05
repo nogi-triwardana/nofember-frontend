@@ -1,11 +1,23 @@
-import React from "react";
-import { Input as _Input } from "theme-ui";
+import React, { cloneElement } from "react";
+import { BiSearch } from "react-icons/bi";
+import { Input as ThemeInput } from "theme-ui";
+import { Container } from "./input.styles";
+import { css } from "@emotion/react";
 
-const Input = (props: any) => {
+const Input = ({
+  icon,
+  ...props
+}: any) => {
   return (
-    <_Input 
-      {...props}
-    />
+    <Container>
+      {icon && cloneElement(icon)}
+      <ThemeInput 
+        css={css`
+          border-width: 0px
+        `}
+        {...props}
+      />
+    </Container>
   );
 }
 

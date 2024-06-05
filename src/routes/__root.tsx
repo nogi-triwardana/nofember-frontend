@@ -15,6 +15,11 @@ export const Route = createRootRoute({
             :root {
               --border-table-color: ${theme?.colors?.borderColorTable};
               --bg-light: ${theme?.colors?.bgLight};
+              --gray-200: ${theme?.colors?.gray200};
+            }
+
+            *:focus {
+              outline: none;
             }
           `
         }

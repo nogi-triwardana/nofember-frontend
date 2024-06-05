@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table } from '../../../components/molecules/Table';
 import { Box } from 'theme-ui';
+import { ListPage } from '../../../components/molecules/ListPage';
 
 const responseFake = [
   {
@@ -39,7 +39,7 @@ const columnsDummy = [
 const Guests = () => {
   return (
     <Box style={{ padding: '48px' }}>
-      <Table
+      <ListPage
         datas={responseFake}
         columns={columnsDummy}
       />
