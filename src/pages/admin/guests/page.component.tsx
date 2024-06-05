@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from 'theme-ui';
-import { ListPage } from '../../../components/molecules/ListPage';
+import { ListPage } from '../../../components/molecules';
 
 const responseFake = [
   {

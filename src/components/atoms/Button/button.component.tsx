@@ -1,4 +1,5 @@
-import { StyledButton } from "./button.styles";
+import { ButtonStyled } from "./button.styles";
+import { Button as ThemeButton } from "theme-ui";
 
 const Button = ({ 
   children,
@@ -10,15 +11,19 @@ const Button = ({
 }: any) => {
   
   return (
-    <StyledButton
+    <ThemeButton
+      css={ButtonStyled}
       onClick={onClick}
       type={type}
       disabled={disabled}
+      variant="primary"
     >
       {startIcon}
-      {children}
+      <span>
+        {children}
+      </span>
       {endIcon}
-    </StyledButton>
+    </ThemeButton>
   );
 }
 

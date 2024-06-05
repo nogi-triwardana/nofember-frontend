@@ -1,9 +1,6 @@
 import React from 'react';
 import { BoxForm, BoxSection, Frame, TextHeader } from './login.styles';
-import { Input } from '../../components/atoms/Input';
-import { Button } from '../../components/atoms/Button';
-import { Label } from '../../components/atoms/Label';
-import { Checkbox } from '../../components/atoms/Checkbox';
+import { Input, Button, Label, Checkbox } from '../../components/atoms';
 import { Box, Link } from 'theme-ui';
 import { css } from '@emotion/react';
 

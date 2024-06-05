@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Container } from "./header.styles";
 import { Box, Avatar } from "theme-ui";
 import AvatarImg from '../../../assets/icons/avatar.svg';
-import { Dropdown } from "../../molecules/Dropdown";
+import { Dropdown } from "../../molecules";
 import { DropdownMenu } from "../../../constants";
 
 const Header = () => {

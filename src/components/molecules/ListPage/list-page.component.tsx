@@ -1,9 +1,10 @@
 import React from 'react';
 import { Table } from '../Table';
-import { Input } from '../../atoms/Input';
+import { Input, Button } from '../../atoms';
 import { BiSearch } from 'react-icons/bi';
 import { Container } from './list-page.styles';
-import { Flex } from 'theme-ui';
+import { Box, Flex } from 'theme-ui';
+import { PiPlus } from 'react-icons/pi';
 
 const ListPage = ({ 
   datas, 
@@ -12,6 +13,15 @@ const ListPage = ({
 }: any) => {
   return (
     <Container>
+      <Flex sx={{ justifyContent: 'flex-end' }}>
+        <Box>
+          <Button
+            startIcon={<PiPlus />}
+          >
+            Tambah Data
+          </Button>
+        </Box>
+      </Flex>
       <Flex sx={{ flex: '1 1 auto' }}>
         {customSearch ? customSearch : (
           <Input 

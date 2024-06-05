@@ -3,7 +3,6 @@ import { TableColumn } from './TableColumn';
 import { TableHeader } from './TableHeader';
 import { TableRow } from './TableRow';
 import { TBodyStyled, TableStyled } from './table.styles';
-import { Box } from 'theme-ui';
 
 const Table = ({ datas, columns }: any) => {
   return (
