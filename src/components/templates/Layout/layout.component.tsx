@@ -1,7 +1,6 @@
 /** @jsxImportSource theme-ui */
-import { Sidebar } from "../../organisms/Sidebar";
+import { Sidebar, Header } from "../../organisms";
 import { Box, Flex } from "theme-ui";
-import { Header } from "../../organisms/Header";
 
 const Layout = ({ children }: any) => {
   return (
