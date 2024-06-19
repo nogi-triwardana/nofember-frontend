@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box } from 'theme-ui';
 import { ListPage } from '../../../components/molecules';
 
@@ -38,8 +37,9 @@ const columnsDummy = [
 
 const Guests = () => {
   return (
-    <Box style={{ padding: '48px' }}>
+    <Box sx={{ padding: '48px' }}>
       <ListPage
+        title={"Daftar Tamu"}
         datas={responseFake}
         columns={columnsDummy}
       />

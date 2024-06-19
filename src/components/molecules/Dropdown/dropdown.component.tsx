@@ -1,6 +1,5 @@
 /** @jsxImportSource theme-ui */
 import { forwardRef, useImperativeHandle, useState } from "react";
-import { motion } from "framer-motion";
 import { LiStyled, NavContainer, UlStyled } from "./dropdown.styles";
 
 const containerVariants = {
