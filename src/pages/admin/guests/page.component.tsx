@@ -1,6 +1,6 @@
-import React from 'react';
 import { Box } from 'theme-ui';
 import { ListPage } from '../../../components/molecules';
+import { BreadCrumbs } from '../../../components/atoms';
 
 const responseFake = [
   {
@@ -36,10 +36,28 @@ const columnsDummy = [
   }
 ];
 
+const ItemsBreadcrumbs = [
+  {
+    label: "Daftar Tamu",
+    path: "/guests"
+  },
+];
+
 const Guests = () => {
   return (
-    <Box style={{ padding: '48px' }}>
+    <Box 
+      sx={{ 
+        padding: '48px',
+        'div:first-child + div:last-child': {
+          marginTop: '24px'
+        }
+      }}
+    >
+      <BreadCrumbs
+        items={ItemsBreadcrumbs}
+      />
       <ListPage
+        title={"Daftar Tamu"}
         datas={responseFake}
         columns={columnsDummy}
       />

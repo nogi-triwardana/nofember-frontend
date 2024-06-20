@@ -38,6 +38,10 @@ export const theme: Theme = {
     gray800: 'rgb(31 41 55)',
     gray900: 'rgb(17 24 39)',
     gray950: 'rgb(3 7 18)',
+    blue50: 'rgb(168 198 237)',
+    blue100: 'rgb(128 175 237)',
+    blue200: 'rgb(102 160 237)',
+    blue300: 'rgb(74 144 237)',
     // muted: '#f6f6f6',
   },
   fontWeights: {
