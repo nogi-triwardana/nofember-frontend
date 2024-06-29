@@ -14,13 +14,13 @@ export const Container = styled(motion.aside)`
 
 export const UlStyled = styled(motion.ul)`
   li + li {
-    margin-top: 30px;
+    margin-top: 10px;
   };
   list-style-type: none;
-  padding-left: 30px;
+  padding-left: 10px;
 `;
 
-export const NestedMenu: any = styled(motion.div)`
+export const NestedMenu = styled(motion.div)`
   svg + span {
     margin-left: 10px;
   };
@@ -28,8 +28,10 @@ export const NestedMenu: any = styled(motion.div)`
   position: relative;
   cursor: pointer;
   align-items: center;
-  padding-right: 40px;
-  `;
+  padding: 12px;
+  margin-right: 10px;
+  border-radius: 12px;
+`;
 
 export const buttonCollapse: ThemeUIStyleObject = {
   display: 'flex',

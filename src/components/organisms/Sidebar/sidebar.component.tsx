@@ -3,7 +3,7 @@ import { Menus } from "../../../constants";
 import { Container, NestedMenu, UlStyled, buttonCollapse } from "./sidebar.styles";
 import { FaArrowLeft } from "react-icons/fa";
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 
 const sidebarVariants = {
   expanded: {
@@ -78,12 +78,18 @@ const Sidebar = () => {
 };
 
 const MenuItem = ({ key, name, Icon, link, isOpen }: any) => {
+  const router = useRouterState();
+
   return (
     <motion.li 
       key={'sidebar-menu-' + key}
     >
       <Link to={link} style={{ textDecoration: 'none' }}>
-        <NestedMenu>
+        <NestedMenu
+          sx={{
+            backgroundColor: router?.location?.pathname === link ? '#ded9d9' : 'transparent'
+          }}
+        >
           <Icon 
             sx={{ color: 'primary' }} 
           />
