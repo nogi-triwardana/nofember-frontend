@@ -1,9 +1,9 @@
 import { Dropdown } from "./Dropdown";
-import { ListPage } from "./ListPage";
 import { Table } from "./Table";
+import { Pagination } from "./Pagination";
 
 export {
   Dropdown,
-  ListPage,
-  Table
+  Table,
+  Pagination,
 }
