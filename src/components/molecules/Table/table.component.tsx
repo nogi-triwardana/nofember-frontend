@@ -4,7 +4,10 @@ import { TableHeader } from './TableHeader';
 import { TableRow } from './TableRow';
 import { TBodyStyled, TableStyled } from './table.styles';
 
-const Table = ({ datas, columns }: any) => {
+const Table = ({ 
+  datas, 
+  columns,
+}: any) => {
   return (
     <Fragment>
       <TableStyled>

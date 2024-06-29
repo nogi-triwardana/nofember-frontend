@@ -1,6 +1,7 @@
 import React from 'react';
-import { Table } from '../Table';
+import { Table } from '../../molecules';
 import { Input, Button } from '../../atoms';
+import { Pagination } from '../../molecules';
 import { BiSearch } from 'react-icons/bi';
 import { Container } from './list-page.styles';
 import { Box, Flex, Text } from 'theme-ui';
@@ -10,7 +11,9 @@ const ListPage = ({
   datas, 
   columns, 
   customSearch, 
+  page,
   title,
+  limit = 10,
 }: ListPageType) => {
   return (
     <Container>
@@ -51,6 +54,18 @@ const ListPage = ({
         datas={datas}
         columns={columns}
       />
+      <Box 
+        sx={{ 
+          display: 'flex', 
+          justifyContent: 'flex-end' 
+        }}
+      >
+        <Pagination 
+          datas={datas} 
+          page={page}
+          limit={limit}
+        />
+      </Box>
     </Container>
   );
 };

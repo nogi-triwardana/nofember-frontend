@@ -1,19 +1,15 @@
+import { useState } from 'react';
 import { Box } from 'theme-ui';
-import { ListPage } from '../../../components/molecules';
+import { ListPage } from '../../../components/organisms';
 import { BreadCrumbs } from '../../../components/atoms';
 
-const responseFake = [
+const responseFake = Array(61).fill(
   {
     id: 1,
     name: 'Nogi',
     quota: 2
-  },
-  {
-    id: 2,
-    name: 'Febby',
-    quota: 3
   }
-];
+);
 
 const columnsDummy = [
   {
@@ -44,6 +40,9 @@ const ItemsBreadcrumbs = [
 ];
 
 const Guests = () => {
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
+
   return (
     <Box 
       sx={{ 
@@ -60,6 +59,8 @@ const Guests = () => {
         title={"Daftar Tamu"}
         datas={responseFake}
         columns={columnsDummy}
+        page={page}
+        limit={limit}
       />
     </Box>
   );
